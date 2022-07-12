@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_clone/model/model_movie.dart';
 
 class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+ 
+  //¿µÈ­ ´õ¹Ìµ¥ÀÌÅÍ ¸¸µé±â
+  List<Movie> movies = [
+    Movie.fromMap({
+      'title':'»ç¶ûÀÇ ºÒ½ÃÂø',
+      'keyword':'»ç¶û/·Î¸Ç½º/ÆÇÅ¸Áö',
+      'poster':'test_movie_1.png'
+      'like':false
+
+    })
+  ];
+
   @override
   void initState() {
     super.initState();
@@ -32,21 +45,21 @@ class TopBar extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(right: 1),
             child: Text(
-              'TV í”„ë¡œê·¸ë¨',
+              'TV ÇÁ·Î±×·¥',
               style: TextStyle(fontSize: 14),
             ),
           ),
           Container(
             padding: EdgeInsets.only(right: 1),
             child: Text(
-              'ì˜í™”',
+              '¿µÈ­',
               style: TextStyle(fontSize: 14),
             ),
           ),
           Container(
             padding: EdgeInsets.only(right: 1),
             child: Text(
-              'ë‚´ê°€ ì°œí•œ ì½˜í…ì¸ ',
+              '³»°¡ ÂòÇÑ ÄÜÅÙÃ÷',
               style: TextStyle(fontSize: 14),
             ),
           ),
