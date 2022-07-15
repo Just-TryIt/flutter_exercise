@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_clone/model/model_movie.dart';
+import 'package:netflix_clone/widget/carousel_slider.dart';
 
 class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
- 
-  //¿µÈ­ ´õ¹Ìµ¥ÀÌÅÍ ¸¸µé±â
+  //ï¿½ï¿½È­ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
   List<Movie> movies = [
     Movie.fromMap({
-      'title':'»ç¶ûÀÇ ºÒ½ÃÂø',
-      'keyword':'»ç¶û/·Î¸Ç½º/ÆÇÅ¸Áö',
-      'poster':'test_movie_1.png'
-      'like':false
-
+      'title': 'ì‚¬ë‘ì˜ ë¶ˆì‹œì°©',
+      'keyword': 'ì‚¬ë‘/ë¡œë§¨ìŠ¤/íŒíƒ€ì§€',
+      'poster': 'test_movie_1.png',
+      'like': false
     })
   ];
 
@@ -25,7 +24,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return TopBar();
+    return ListView(children: <Widget>[
+      Stack(
+        children: <Widget>[
+          CarouselImage(movies: movies),
+          TopBar(),
+        ],
+      )
+    ]);
   }
 }
 
@@ -45,21 +51,21 @@ class TopBar extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(right: 1),
             child: Text(
-              'TV ÇÁ·Î±×·¥',
+              'TV í”„ë¡œê·¸ë¨',
               style: TextStyle(fontSize: 14),
             ),
           ),
           Container(
             padding: EdgeInsets.only(right: 1),
             child: Text(
-              '¿µÈ­',
+              'ì˜í™”',
               style: TextStyle(fontSize: 14),
             ),
           ),
           Container(
             padding: EdgeInsets.only(right: 1),
             child: Text(
-              '³»°¡ ÂòÇÑ ÄÜÅÙÃ÷',
+              'ë‚´ê°€ ì°œí•œ ì½˜í…ì¸ ',
               style: TextStyle(fontSize: 14),
             ),
           ),
